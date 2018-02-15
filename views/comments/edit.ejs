@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<div class="container">
+    
+    <h1 style = "text-align: center;">Edit Comment for: <%= comment.author.username %></h1>
+    
+    <div style="width: 30%; margin: 30px auto;">
+        <form action="/campgrounds/<%= campgroundId %>/comments/<%=comment._id%>?_method=PUT" method="POST">
+            <div class="form-group">
+                <input class="form-control" type = "text" value = "<%= comment.text %>" name = "comment[text]">
+            </div>
+
+            <div class="form-group">
+            <button class ="btn btn-large btn-success btn-block ">Edit</button>
+            </div>
+        </form>
+    
+        <a href="/campgrounds">Back To Campgrounds</a>
+        
+    </div>
+    
+
+    
+    <% include ../partials/footer %>
+        
+    
+</div>
